@@ -1,0 +1,56 @@
+\documentclass{article}
+
+% included packages
+\usepackage{tikz}
+
+%\usepackage[a4paper,landscape,margin=0mm]{geometry}
+\usepackage[paperheight=21cm,paperwidth=300cm,margin=0mm]{geometry}
+
+\usepackage{skull}
+
+% TikZ libraries
+\usetikzlibrary{calendar}
+
+%
+% !!! HERE IS THE PLACE TO SET THE RANGE OF THE CALENDAR !!!
+%
+\newcommand{\firstdate}{2014-01-01}
+\newcommand{\lastdate}{2014-12-31}
+
+
+% start the document
+\begin{document}
+\begin{tikzpicture}
+[
+	overlay
+]
+\tikzstyle{daybox}=[draw,minimum width=8mm,text height=15cm]
+
+\calendar at (1cm,-\paperheight +1.5cm)
+[
+	dates=\firstdate to \lastdate,
+	day list right,
+	month label below centered,
+	month xshift=0mm,
+	day xshift=8mm,
+	name=mycal,
+	day code={
+		\node[daybox,name=\pgfcalendarsuggestedname,every day]{\tikzdaytext};
+		\node[draw=none,fill=none,above of=\pgfcalendarsuggestedname, node distance=-7cm] {\%w.};
+	}
+]
+if (weekend)
+	[nodes={fill=black!25}]
+if (day of month=1)
+	[nodes={fill=black!75,text=white}]
+;
+\end{tikzpicture}
+
+\begin{center}
+	\Huge
+	VeriFIT's\\
+	$\skull$ \emph{Fear the Upcoming Deadline} $\skull$\\
+	calendar 2014
+\end{center}
+
+\end{document}

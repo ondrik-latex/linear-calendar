@@ -1,7 +1,7 @@
 from datetime import date
 import re
 
-LATEX_SOURCE = "../linear_calendar.tex"
+LATEX_SOURCE = "./template.tex"
 
 FIRST_DATE = date(2014, 1, 1)
 LAST_DATE = date(2014, 12, 14)
