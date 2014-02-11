@@ -9,7 +9,7 @@ OUTPUT_BASE = "./output"
 FIRST_DATE = date(2014, 1, 1)
 LAST_DATE = date(2014, 12, 31)
 
-MAX_DAYS = 34
+MAX_DAYS = 32
 
 if __name__ == "__main__":
     begin_date = FIRST_DATE
