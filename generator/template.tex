@@ -26,7 +26,7 @@
 [
 	overlay
 ]
-\tikzstyle{daybox}=[draw,minimum width=8mm,text height=15cm]
+\tikzstyle{daybox}=[draw,very thick,minimum width=8mm,text height=18.5cm]
 
 \calendar at (2cm,-\paperheight +1.5cm)
 [
@@ -38,7 +38,7 @@
 	name=mycal,
 	day code={
 		\node[daybox,name=\pgfcalendarsuggestedname,every day]{\tikzdaytext};
-		\node[draw=none,fill=none,above of=\pgfcalendarsuggestedname, node distance=-7cm] {\%w.};
+		\node[draw=none,fill=none,above of=\pgfcalendarsuggestedname, node distance=-8.7cm] {\%w.};
 	}
 ]
 if (weekend)
@@ -48,12 +48,12 @@ if (day of month=1)
 ;
 \end{tikzpicture}
 
-\begin{center}
-	\Huge
-	VeriFIT's\\
-	$\skull$ \emph{Fear the Upcoming Deadline} $\skull$\\
-	calendar 2014
-\end{center}
+%\begin{center}
+%	\Huge
+%	VeriFIT's\\
+%	$\skull$ \emph{Fear the Upcoming Deadline} $\skull$\\
+%	calendar 2014
+%\end{center}
 \pagebreak
 %%%% END TEMPLATE %%%%
 
