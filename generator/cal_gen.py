@@ -44,7 +44,12 @@ if __name__ == "__main__":
         begin_date = FIRST_DATE
         i = 1
         while begin_date <= LAST_DATE:
-            end_date = min(begin_date + timedelta(days=MAX_DAYS), LAST_DATE)
+            #end_date = min(begin_date + timedelta(days=MAX_DAYS), LAST_DATE)
+            next_month = (begin_date.month % 12) + 1
+            next_year = begin_date.year
+            if next_month == 1: next_year += 1
+            end_date = begin_date.replace(month = next_month, year = next_year)
+            end_date -= timedelta(days=1)
             out_file.write("% TEMPLATE INSTANTIATION {0}:\n".format(i))
             for line in template:
                 line = re.sub(r'\\firstdate', begin_date.isoformat(), line)
