@@ -26,9 +26,9 @@
 [
 	overlay
 ]
-\tikzstyle{daybox}=[draw,very thick,minimum width=8mm,text height=17.5cm]
+\tikzstyle{daybox}=[draw,very thick,minimum width=8mm,text height=16.5cm]
 
-\calendar at (2cm,-\paperheight +1.5cm)
+\calendar at (2cm,-\paperheight +1.7cm)
 [
 	dates=\firstdate to \lastdate,
 	day list right,
@@ -38,8 +38,11 @@
 	name=mycal,
 	day code={
 		\node[daybox,name=\pgfcalendarsuggestedname,every day]{\tikzdaytext};
-		\node[draw=none,fill=none,above of=\pgfcalendarsuggestedname, node distance=-8.3cm] {\%w.};
-	}
+		\node[draw=none,fill=none,above of=\pgfcalendarsuggestedname, node distance=-7.7cm] {\%w.};
+	},
+  month code={
+    \node[yshift=17.6cm] {\large \tikzmonthtext};
+  }
 ]
 if (weekend)
 	[nodes={fill=blue!25}]

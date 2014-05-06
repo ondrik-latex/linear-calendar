@@ -7,8 +7,8 @@ from subprocess import call
 LATEX_SOURCE = "./template.tex"
 OUTPUT_FILENAME = "./output.tex"
 
-FIRST_DATE = date(2014, 1, 1)
-LAST_DATE = date(2014, 12, 31)
+FIRST_DATE = date(2014, 5, 1)
+LAST_DATE = date(2015, 4, 30)
 
 MAX_DAYS = 32
 
